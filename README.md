@@ -9,12 +9,12 @@ Reading Mark's book has taught me a bunch and I highly recommend it to anyone.
 ///BREAK///
 PROJECT DETAILS
 
-The purpose of this application is to provide the user with the prime factors of any number entered by the user up to 1,001.
+The purpose of this application is to provide the user with the prime factors of any number entered by the user under 1,001.
 
 The solution contains a C# Console Application that references a Class Library.
 
 The class library contains an array of all of the prime numbers up to 1,000 and the definition of a method that contains an algorithm for determining which of those prime numbers are associated with the user's entry. 
 
-The toughest parts of this project for me were type conversions, utilizing proper syntax, and algorithm design.
+The toughest parts of this project for me were type conversions, utilizing proper syntax, and algorithm design. The files uploaded in this repository represent Version2 of the project. While it is far from perfect, I have cleaned up a lot of the code from my original attempt.
 
 I understand that this code may be more complex than is necessary, and that it could probably be faster and more efficient. If you have any suggestions for code improvement or resources that would help me along, please send them my way! 
