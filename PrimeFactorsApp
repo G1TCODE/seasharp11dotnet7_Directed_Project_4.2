@@ -1,0 +1,94 @@
+using Ch04Ex02PrimeFactorsLib;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+WriteLine("Hello! Welcome to the Prime Factors Application. You can use this application to identify all the prime factors of any integer under 1,001.");
+RallyPoint:
+WriteLine();
+Write("Please enter a whole number that you would like to factorize: ");
+
+double userinput = 0;
+try
+{
+    userinput = Convert.ToDouble(ReadLine());
+}
+catch (Exception ex)
+{
+    WriteLine($"{ex.GetType} says {ex.Message}");
+    goto RallyPoint;
+}
+WriteLine();
+if (userinput > 1 && userinput < 1001)
+{
+    PFLib.primeFactors(userinput); 
+    //this method is defined in the PFLibrary file that this Console App project references.
+}
+else if (userinput > 1000)
+{
+    WriteLine($"{userinput} is too large for this application! The maximum value is 1,000. Would you like to try again?");
+    WriteLine();
+    string? answer1 = Console.ReadLine();
+    if (answer1 == "Yes")
+    {
+        goto RallyPoint;
+    }
+    else if (answer1 == "No")
+    {
+        WriteLine("Thank you for using the prime factors app! Goodbye.");
+        ReadKey();
+    }
+    else if (answer1 != "Yes" || answer1 != "No")
+    {
+        WriteLine();
+        WriteLine("I'm sorry, I can't understand your answer.");
+        goto RallyPoint2;
+    }
+}
+else if (userinput <= 1)
+{
+    Console.WriteLine($"{userinput} does not have any prime factors!");
+    WriteLine();
+    WriteLine("Would you like to try again?");
+    WriteLine();
+    string? answer2 = Console.ReadLine();
+    if (answer2 == "Yes")
+    {
+        goto RallyPoint;
+    }
+    else if (answer2 == "No")
+    {
+        WriteLine("Thank you for using the prime factors app! Goodbye.");
+        ReadKey();
+    }
+    else if (answer2 != "Yes" || answer2 != "No")
+    {
+        WriteLine();
+        WriteLine("I'm sorry, I can't understand your answer.");
+        goto RallyPoint2;
+    }
+}
+WriteLine();
+RallyPoint2:
+WriteLine();
+WriteLine("Would you like determine the factors of another number?");
+WriteLine();
+string? answer3 = ReadLine();
+if (answer3 == "Yes")
+{
+    goto RallyPoint;
+}
+else if (answer3 == "No")
+{
+    WriteLine();
+    WriteLine("Thank you for using the prime factors app! Goodbye.");
+    return;
+}
+else if (answer3 != "Yes" || answer3 != "No")
+{
+    WriteLine();
+    WriteLine("I'm sorry, I can't understand your answer.");
+    goto RallyPoint2;
+}
