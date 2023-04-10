@@ -13,7 +13,7 @@ Write("Please enter a whole number that you would like to factorize: ");
 double userinput = 0;
 try
 {
-    userinput = Convert.ToDouble(ReadLine());
+    userinput = Convert.ToDouble(ReadLine()); // convert input to a double so that math can be performed at a later time (right of the decimal point)
 }
 catch (Exception ex)
 {
@@ -21,10 +21,9 @@ catch (Exception ex)
     goto RallyPoint;
 }
 WriteLine();
-if (userinput > 1 && userinput < 1001)
+if (userinput > 1 && userinput < 1001) // if userinput was successfully converted to a double within the specified range
 {
-    PFLib.primeFactors(userinput); 
-    //this method is defined in the PFLibrary file that this Console App project references.
+    PFLib.primeFactors(userinput); // invoke method that identifies prime factors of userinput (defined in Class Library)
 }
 else if (userinput > 1000)
 {
