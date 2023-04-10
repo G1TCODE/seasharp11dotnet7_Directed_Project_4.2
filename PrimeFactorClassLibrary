@@ -21,41 +21,41 @@ public static class PFLib
         881, 883, 887, 907, 911, 919, 929, 937, 941, 947, 953, 967, 971, 977, 983, 991, 997
         };
 
-        List<int> magicNumbers = new List<int>();
+        List<int> magicNumbers = new List<int>(); // future collection point for numbers identified as prime factors of userinput
 
         foreach (int n in primeNumbers)
         {
-            if (n == userinput)
+            if (n == userinput) // if userinput is already a prime number (no prime factors)
             {
-                Write($"{userinput} is a prime number!");
+                Write($"{userinput} is a prime number!"); // output
             }
-            else if (n != userinput)
+            else if (n != userinput) // if userinput is not a prime number
             {
-                if (userinput % n == 0)
+                if (userinput % n == 0) // if userinput is divisible by a prime number n
                 {
-                    magicNumbers.Add(n);
+                    magicNumbers.Add(n); // add prime number n to the collection point to be output later (it is a prime factor of userinput)
                 }
-                else if (userinput % n != 0)
+                else if (userinput % n != 0) // if userinput is not divisible by a prime number n
                 {
-                    continue;
+                    continue; // do nothing, prime number n is not a prime factor of userinput
                 }
             }
         }
 
-        List<string> finalProduct = magicNumbers.ConvertAll<string>(x => x.ToString());
+        List<string> finalProduct = magicNumbers.ConvertAll<string>(x => x.ToString()); // convert all doubles to strings to be output (project required that output be a string)
 
-        if (finalProduct.Count == 1 && !finalProduct.Contains(Convert.ToString(userinput)))
+        if (finalProduct.Count == 1 && !finalProduct.Contains(Convert.ToString(userinput))) // if only one prime number met the above conditions and it is not userinput
         {
             foreach (string y in finalProduct)
             {
-                Write($"The only prime factor of {userinput} is " + (y) + ".");
+                Write($"The only prime factor of {userinput} is " + (y) + "."); // userinput only has one prime factor
             }
         }
-        else if (finalProduct.Count == 2)
+        else if (finalProduct.Count == 2) // if there are two prime factors of userinput
         {
             Write($"The two prime factors of {userinput} are " + (finalProduct.First()) + " and " + (finalProduct.Last()) + ".");
         }
-        else if (finalProduct.Count >= 3)
+        else if (finalProduct.Count >= 3) // if there are three or more prime factors of userinput
         {
             Write($"The prime factors of {userinput} are ");
             foreach (string s in finalProduct)
