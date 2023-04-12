@@ -1,0 +1,60 @@
+using Ch04Ex02PrimeFactorsLib;
+using static System.Console;
+
+namespace PrimeFactorsLibUnitTests
+{
+    public class PFLibUnitTests
+    {
+        [Fact]
+        public void testInputisaprimenumber()
+        {
+            //arrange
+            double a = 97;
+            List<string> expected = new List<string> { "97" };
+            PFLib thePFs = new();
+            //act
+            List<string> actual = thePFs.primeFactors(a);
+            //assert
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void testInputhasonepf()
+        {
+            //arrange
+            double a = 4;
+            List<string> expected = new List<string> { "2" };
+            PFLib thePFs = new();
+            //act
+            List<string> actual = thePFs.primeFactors(a);
+            //assert
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void testInputhastwopf()
+        {
+            //arrange
+            double a = 10;
+            List<string> expected = new List<string> { "2", "5" };
+            PFLib thePFs = new();
+            //act
+            List<string> actual = thePFs.primeFactors(a);
+            //assert
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void testInputhasthreeormorepf()
+        {
+            //arrange
+            double a = 110;
+            List<string> expected = new List<string> { "2", "5", "11" };
+            PFLib thePFs = new();
+            //act
+            List<string> actual = thePFs.primeFactors(a);
+            //assert
+            Assert.Equal(expected, actual);
+        }
+    }
+}
