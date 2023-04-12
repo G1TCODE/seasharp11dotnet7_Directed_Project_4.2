@@ -9,6 +9,8 @@ Reading Mark's book has taught me a bunch and I highly recommend it to anyone.
 ///BREAK///
 PROJECT DETAILS
 
+The Version 3 branch is my latest version of this applicatinon. While creating the unit test for the primeFactors() method, it came to my attention that my use of the "return null;" had unintended consequences, and that it was not simply making Compiler Error CS0161 go away. 
+
 The purpose of this application is to provide the user with the prime factors of any number entered by the user under 1,001.
 
 The solution contains a C# Console Application that references a Class Library.
